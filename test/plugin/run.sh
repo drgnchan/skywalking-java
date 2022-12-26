@@ -262,7 +262,7 @@ do
     [[ $? -ne 0 ]] && exitWithMessage "${testcase_name}, generate script failure!"
 
     echo "start container of testcase.name=${testcase_name}"
-    bash ${case_work_base}/scenario.sh $debug_mode 1>${case_work_logs_dir}/${testcase_name}.log
+    bash ${case_work_base}/scenario.sh $debug_mode
     status=$?
     if [[ $status == 0 ]]; then
         [[ -z $debug_mode ]] && remove_dir ${case_work_base}
