@@ -98,6 +98,10 @@ curl -s --max-time 3 http://localhost:12800/receiveData > ${SCENARIO_HOME}/data/
 [[ ! -f ${SCENARIO_HOME}/data/actualData.yaml ]] && exitOnError "${SCENARIO_NAME}-${SCENARIO_VERSION}, 'actualData.yaml' Not Found!"
 
 echo "To validate"
+echo "expectedData is:------"
+cat ${SCENARIO_HOME}/data/expectedData.yaml
+echo "actualData is:------"
+cat ${SCENARIO_HOME}/data/actualData.yaml
 java -jar \
     -Xmx256m -Xms256m \
     -DcaseName="${SCENARIO_NAME}-${SCENARIO_VERSION}" \
